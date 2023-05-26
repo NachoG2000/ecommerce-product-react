@@ -5,11 +5,10 @@ import cross from '../images/icon-close2.svg'
 function Lightbox(props) {
   const [imageArray, setImageArray] = useState(props.imageArray);
   const [selectedImage, setSelectedImage] = useState(imageArray[0]);
-  
-  console.log(imageArray)
 
   const imageElements = imageArray.map((image) => (
       <img
+        key={image}
         src={image}
         alt={image}
         className={`rounded-xl cursor-pointer h-full ${selectedImage === image ? 'border-4 border-orange-400 rounded-xl' : ''}`}
